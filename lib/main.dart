@@ -19,27 +19,23 @@ class MyWidget extends StatelessWidget {
           shadowColor: Colors.blue,
         ),
         body: Container(
-          height: double.infinity,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.star,
-                size: 60,
-                color: const Color.fromARGB(255, 214, 228, 16),
-              ),
-              Image(
-                image: AssetImage('assets/shoe.png'),
-                width: 100,
-                height: 100,
-              ),
-              Icon(
-                Icons.star,
-                size: 60,
-                color: const Color.fromARGB(255, 214, 228, 16),
-              ),
-            ],
+          //height: double.infinity,
+          width: double.infinity,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: List.generate(
+                100,(index)=>Icon(
+                  Icons.star,
+                  size: index.toDouble(),
+                  color: Colors.blue,
+                )
+                  
+                ),
+           
+            ),
           ),
         ),
       ),
